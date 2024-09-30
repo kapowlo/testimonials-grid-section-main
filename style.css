@@ -24,18 +24,85 @@
 /*-----------------BODY + GENERAL STYLES */
 
 body {
-  color: var(--moderate-violet); /*placeholder */
   font-family: "Barlow Semi Condensed", system-ui;
 }
 
+img.card__author-img {
+  border-radius: 50%;
+}
+
 /*------------------MAIN CONTAINER STYLES------------ */
+.container {
+  /*add some padding everywhere nothing should touch the edges  */
+  padding: 1em;
+  background-color: var(--light-grayish-blue);
+}
 
 /*--------------------SECTION STYLES------------------- */
 
 /*------------------CARD STYLES--------------------- */
 .card {
   border: 8px solid red;
+  border-radius: 12px;
   margin-block: 2em;
+  padding: 0 1em 1em 1em; /*the svg img is touching the top edge */
+  width: 100%; /*remember to limit width for desktop screen otherwise card gets too big */
+}
+
+.card__header.flexbox-container {
+  display: flex;
+  gap: 0.5em;
+}
+
+.card__wrapper-author-status,
+.card__author-img {
+  /*both logo and text don't touch the top edge of card */
+
+  margin-block-start: 1rem;
+}
+
+.card__wrapper-author-status {
+  font-size: 0.6rem;
+  color: var(--white);
+}
+.card__wrapper-author-status > * {
+  /*targets h3 and h4 inside of wrapper */
+  font-weight: 500;
+}
+.card__wrapper-author-status h4 {
+  opacity: 0.5;
+}
+
+.card__lighter-text {
+  /*this paragraph seems a bit bigger than the status text */
+  font-size: 0.85rem;
+  opacity: 0.7;
+  color: var(--white);
+}
+
+/*---------------------------CARD ONE STYLES----------------  */
+/* issue: at very small screen the layout for this card doesn't work
+the bold text covers the card header text when screen is between 320px - 412px(fixes itself by 400px) 
+*/
+
+.card.grid-item-1 .card__bold-text {
+  /*the first card's bold text is in front of the big quotation svg image */
+  position: relative;
+  top: -50px;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.card.grid-item-1 {
+  background-color: var(--moderate-violet);
+}
+.card img[src$=".svg"] {
+  /*only targets  svg image  big quotations */
+  margin: 0 0 0 auto;
+  opacity: 0.75;
+  /* flex-grow: 1; */
+
+  inline-size: 35%;
 }
 
 /*--------------------ATTRIBUTION STYLES--------------- */
