@@ -62,6 +62,7 @@ img.card__author-img {
 }
 
 .card__wrapper-author-status {
+  text-wrap: nowrap; /*stop "verified graduate text from going to next line" */
   font-size: 0.6rem;
   color: var(--white);
 }
@@ -73,11 +74,17 @@ img.card__author-img {
   opacity: 0.5;
 }
 
+.card__bold-text {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 .card__lighter-text {
   /*this paragraph seems a bit bigger than the status text */
   font-size: 0.85rem;
   opacity: 0.7;
   color: var(--white);
+  line-height: 1.5;
 }
 
 /*---------------------------CARD ONE STYLES----------------  */
@@ -88,7 +95,7 @@ the bold text covers the card header text when screen is between 320px - 412px(f
 .card.grid-item-1 .card__bold-text {
   /*the first card's bold text is in front of the big quotation svg image */
   position: relative;
-  top: -50px;
+  top: -22px;
   color: var(--white);
   font-weight: 600;
 }
@@ -102,7 +109,7 @@ the bold text covers the card header text when screen is between 320px - 412px(f
   opacity: 0.75;
   /* flex-grow: 1; */
 
-  inline-size: 35%;
+  max-inline-size: 35%; /*limit the size of the svg image,and stops it from getting too big at larger screen size */
 }
 
 /*--------------------ATTRIBUTION STYLES--------------- */
