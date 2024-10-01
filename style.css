@@ -49,6 +49,15 @@ img.card__author-img {
   width: 100%; /*remember to limit width for desktop screen otherwise card gets too big */
 }
 
+.card:not(.grid-item-1) .card__bold-text {
+  /*target the bold=text class of all cards except first card
+  if i add margin top it removes the desired effect of bold text being  in front of the svg image
+  i'll play around with the top value i set on bold text to see if i can get it to work with margin-top
+  but for now keep it like this.
+  */
+  margin-block: 1rem;
+}
+
 .card__header.flexbox-container {
   display: flex;
   gap: 0.5em;
@@ -77,6 +86,7 @@ img.card__author-img {
 .card__bold-text {
   font-size: 1rem;
   line-height: 1.5;
+  font-weight: 600;
 }
 
 .card__lighter-text {
@@ -97,7 +107,6 @@ the bold text covers the card header text when screen is between 320px - 412px(f
   position: relative;
   top: -22px;
   color: var(--white);
-  font-weight: 600;
 }
 
 .card.grid-item-1 {
@@ -111,10 +120,49 @@ the bold text covers the card header text when screen is between 320px - 412px(f
 
   max-inline-size: 35%; /*limit the size of the svg image,and stops it from getting too big at larger screen size */
 }
+/*------------------------CARD TWO STYLES--------------- */
+.card.grid-item-2 {
+  background-color: var(--very-dark-grayish-blue);
+}
+.grid-item-2 .card__bold-text {
+  color: var(--white);
+}
+
+/*----------------------CARD THREE STYLES------------ */
+
+.card.grid-item-3 {
+  background-color: var(--white);
+}
+
+.card.grid-item-3 .card__lighter-text,
+.card.grid-item-3 .card__wrapper-author-status {
+  /*all text inside the third card is black */
+  color: black;
+}
+
+/*--------------------------CARD FOUR STYLES------------- */
+
+.card.grid-item-4 {
+  background-color: var(--very-dark-blackish-blue);
+}
+.card.grid-item-4 .card__bold-text {
+  color: var(--white);
+}
+
+/*--------------------------CARD FIVE STYLES------------- */
+.card.grid-item-5 {
+  background-color: var(--white);
+}
+
+.card.grid-item-5 .card__wrapper-author-status,
+.card.grid-item-5 .card__lighter-text {
+  color: black;
+}
 
 /*--------------------ATTRIBUTION STYLES--------------- */
 .attribution {
-  font-size: 0.9rem;
+  padding-bottom: 0.5em; /*add a bit padding so the attribution text doesn't touch the bottom edge of the container */
+  font-size: 0.72rem;
   text-align: center;
 }
 
