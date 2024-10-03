@@ -42,7 +42,6 @@ img.card__author-img {
 
 /*------------------CARD STYLES--------------------- */
 .card {
-  border: 8px solid red;
   border-radius: 12px;
   margin-block: 2em;
   padding: 0 1em 1em 1em; /*the svg img is touching the top edge */
@@ -118,7 +117,10 @@ the bold text covers the card header text when screen is between 320px - 412px(f
   opacity: 0.75;
   /* flex-grow: 1; */
 
-  max-inline-size: 35%; /*limit the size of the svg image,and stops it from getting too big at larger screen size */
+  max-inline-size: 35%; /*limits the size of the svg image,and stops it from getting too big at larger screen size
+  update further clarification "actually this line of code is noticeable at small screen(~320px) the svg image is a bit too big.
+  but on larger screen is i remove it the svg img doesn't seem to get bigger"
+  */
 }
 /*------------------------CARD TWO STYLES--------------- */
 .card.grid-item-2 {
@@ -168,4 +170,62 @@ the bold text covers the card header text when screen is between 320px - 412px(f
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/*--------------------MEDIA QUERY---------------  */
+/*
+1000px br */
+@media screen and (min-width: 50rem) {
+  .container {
+    /*container should take up the full viewport */
+    min-height: 100vh;
+  }
+
+  .grid-container {
+    border: 4px solid teal;
+    padding: 1em;
+
+    max-inline-size: 1200px;
+    margin-inline: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-rows: 0.5fr 0.5fr;
+    /*the rows will affect the cards height and stop them from making them too tall */
+
+    column-gap: 1em;
+    row-gap: 1em;
+  }
+  .card {
+    /*   max-width: 100%; */
+
+    margin-block: 0; /*removing the top and bottom margin fixes the layout a bit */
+  }
+
+  .card.grid-item-1 {
+    border: 6px solid firebrick;
+    grid-column: 1 / 3;
+    grid-row: 1/2;
+  }
+  .card.grid-item-2 {
+    border: 6px solid dodgerblue;
+    grid-column: 3 / 4;
+    grid-row: 1/1;
+  }
+  .card.grid-item-3 {
+    border: 6px solid rebeccapurple;
+    grid-column: 1 / 2;
+    grid-row: 2/2;
+  }
+  .card.grid-item-4 {
+    border: 6px solid yellowgreen;
+    grid-column: 2 / 4;
+    grid-row: 2/2;
+  }
+  .card.grid-item-5 {
+    border: 6px solid black;
+    grid-column: 4 / 5;
+    grid-row: 1 / -1; /* must end at -1 otherwise fifth card doesn't take up the full row and it messes up the layout even more*/
+  }
 }
