@@ -48,12 +48,8 @@ img.card__author-img {
   width: 100%; /*remember to limit width for desktop screen otherwise card gets too big */
 }
 
-.card:not(.grid-item-1) .card__bold-text {
-  /*target the bold=text class of all cards except first card
-  if i add margin top it removes the desired effect of bold text being  in front of the svg image
-  i'll play around with the top value i set on bold text to see if i can get it to work with margin-top
-  but for now keep it like this.
-  */
+.card .card__bold-text {
+  /*target the bold-text class of all cards */
   margin-block: 1rem;
 }
 
@@ -97,31 +93,18 @@ img.card__author-img {
 }
 
 /*---------------------------CARD ONE STYLES----------------  */
-/* issue: at very small screen the layout for this card doesn't work
-the bold text covers the card header text when screen is between 320px - 412px(fixes itself by 400px) 
-*/
-
-.card.grid-item-1 .card__bold-text {
-  /*the first card's bold text is in front of the big quotation svg image */
-  position: relative;
-  top: -22px;
-  color: var(--white);
-}
 
 .card.grid-item-1 {
   background-color: var(--moderate-violet);
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: 95% 0%; /*put the quotation marks to the top left corner(first val controls the horizontal axis)  */
 }
-.card img[src$=".svg"] {
-  /*only targets  svg image  big quotations */
-  margin: 0 0 0 auto;
-  opacity: 0.75;
-  /* flex-grow: 1; */
 
-  max-inline-size: 35%; /*limits the size of the svg image,and stops it from getting too big at larger screen size
-  update further clarification "actually this line of code is noticeable at small screen(~320px) the svg image is a bit too big.
-  but on larger screen is i remove it the svg img doesn't seem to get bigger"
-  */
+.card.grid-item-1 .card__bold-text {
+  color: var(--white);
 }
+
 /*------------------------CARD TWO STYLES--------------- */
 .card.grid-item-2 {
   background-color: var(--very-dark-grayish-blue);
