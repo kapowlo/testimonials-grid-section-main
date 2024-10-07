@@ -180,7 +180,7 @@ img.card__author-img {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 0.5fr 0.5fr;
-    /*the rows will affect the cards height and stop them from making them too tall */
+    /*the rows will affect the cards height and stop them from getting too tall */
     column-gap: 1em;
     row-gap: 1em;
   }
@@ -211,7 +211,14 @@ img.card__author-img {
   .card.grid-item-5 {
     border: 6px solid black;
     grid-column: 4 / 5;
-    grid-row: 1 / -1; /* must end at -1 otherwise fifth card doesn't take up the full row and it messes up the layout even more*/
+
+    grid-row: 1 / -1;
+    /* must starts at 1 and end at -1 or 3 otherwise fifth card(Kira whittle) doesn't take up the full row 
+    and it causes the other cards to be too tall.
+    if i look closely to the left of "Daniel and Jeanette" I can see the following small numbers: 1 2 3 these are the row lines
+    so even though i created two rows i have three grid -row -lines but two row tracks
+    the row position for the fifth card must end at -1 or 3 so the other 2 cards(Daniel, Jonathan) are not stretched out 
+    */
   }
   .attribution {
     padding-top: 1em;
