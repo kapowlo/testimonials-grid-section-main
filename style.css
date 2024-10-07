@@ -148,6 +148,7 @@ img.card__author-img {
 .attribution {
   padding-bottom: 0.5em; /*add a bit padding so the attribution text doesn't touch the bottom edge of the container */
   font-size: 0.72rem;
+  text-align: center;
 }
 
 .attribution a {
