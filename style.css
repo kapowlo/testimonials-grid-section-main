@@ -55,13 +55,13 @@ img.card__author-img {
 
 .card__header.flexbox-container {
   display: flex;
+  align-items: center; /*the author img and the text next to it are vertically aligned */
   gap: 0.5em;
 }
 
 .card__wrapper-author-status,
 .card__author-img {
-  /*both logo and text don't touch the top edge of card */
-
+  /*author img and author name + status text should'nt touch the top edge of card */
   margin-block-start: 1rem;
 }
 
