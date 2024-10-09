@@ -43,7 +43,7 @@ img.card__author-img {
 /*------------------CARD STYLES--------------------- */
 .card {
   border-radius: 12px;
-  margin-block: 2em;
+  margin-block: 1.5em;
   padding: 0 1em 1em 1em; /*the svg img is touching the top edge */
   width: 100%; /*remember to limit width for desktop screen otherwise card gets too big */
 }
@@ -171,45 +171,38 @@ img.card__author-img {
   }
 
   .grid-container {
-    /*need to add some margin-top on the grid-container there is more margin bottom than top currently */
-    border: 4px solid teal;
-    padding: 1em;
-
     max-inline-size: 1500px; /*limit size of grid */
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 0.5fr 0.5fr;
     /*the rows will affect the cards height and stop them from getting too tall */
-    column-gap: 1em;
-    row-gap: 1em;
+    column-gap: 1.25em;
+    row-gap: 1.25em;
   }
   .card {
-    margin-block: 0; /*removing the top and bottom margin fixes the layout a bit */
+    margin-block: 0; /*removing the top and bottom margin on all cards fixes the layout a bit
+    if i keep the top/bottom margin on the card it makes the grid layout -more specifically the rows- look weird
+    */
   }
 
   .card.grid-item-1 {
-    border: 6px solid firebrick;
     grid-column: 1 / 3;
     grid-row: 1/2;
   }
   .card.grid-item-2 {
-    border: 6px solid dodgerblue;
     grid-column: 3 / 4;
     grid-row: 1/1;
   }
   .card.grid-item-3 {
-    border: 6px solid rebeccapurple;
     grid-column: 1 / 2;
     grid-row: 2/2;
   }
   .card.grid-item-4 {
-    border: 6px solid yellowgreen;
     grid-column: 2 / 4;
     grid-row: 2/2;
   }
   .card.grid-item-5 {
-    border: 6px solid black;
     grid-column: 4 / 5;
 
     grid-row: 1 / -1;
