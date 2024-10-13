@@ -188,7 +188,7 @@ img.card__author-img {
   .card__bold-text {
     font-size: clamp(
       1.1rem,
-      0.48rem + 1.25vw,
+      0.48rem + 1vw,
       1.75rem
     ); /*make font-size more responsive and wont go below min val or above max val, while scaling based on vw.
     This mean I never really have full control on the font-size but it should never be too small or too big while scaling if 
