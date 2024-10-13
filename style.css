@@ -185,6 +185,16 @@ img.card__author-img {
     if i keep the top/bottom margin on the card it makes the grid layout -more specifically the rows- look weird
     */
   }
+  .card__bold-text {
+    font-size: clamp(
+      1.1rem,
+      0.48rem + 1.25vw,
+      1.75rem
+    ); /*make font-size more responsive and wont go below min val or above max val, while scaling based on vw.
+    This mean I never really have full control on the font-size but it should never be too small or too big while scaling if 
+    vw gets bigger
+    */
+  }
 
   .card.grid-item-1 {
     grid-column: 1 / 3;
