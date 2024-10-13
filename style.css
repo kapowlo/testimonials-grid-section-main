@@ -171,7 +171,7 @@ img.card__author-img {
   }
 
   .grid-container {
-    max-inline-size: 1500px; /*limit size of grid */
+    max-inline-size: 1200px; /*limit size of grid */
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
